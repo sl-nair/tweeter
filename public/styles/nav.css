@@ -1,0 +1,33 @@
+nav {
+  height: 120px;
+  background-color: #4056A1 ;
+  color: #FFFFFF;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position:fixed;
+  width: inherit;
+  }
+
+.title {
+  font-family: 'Bungee', cursive; 
+  
+}
+
+.additional-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  height: 620px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1ab08;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+} 
