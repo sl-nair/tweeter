@@ -26,10 +26,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- App JS -->
     <script type="text/javascript" src="./scripts/client.js"></script>
     <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
-
+    
   </head>
 
   <body>
@@ -55,35 +56,24 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
+         
+        <form id="tweet-form" action="/tweets/" method="POST">
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
-          <div>
+          <div id="button-and-counter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
+          <div class ="error" id="empty-error">
+            <!-- <i class="fa-sharp fa-regular fa-square-exclamation" style="color: #ff0000;"></i> -->
+            Say something!
+          </div>
+          <div class="error" id="too-long-error">
+            You've said too much! Please limit to 140 characters.
+          </div>
         </form>
       </section>
-      <section id="tweet-container">
-        <article>
-          <h3>
-            <i class="fa-sharp fa-solid fa-user-ninja"></i>
-            Rhoda Jacobs          
-          </h3>
-          <div class="actual-tweet"> 
-            Hello World! Today is the first day is not the first day uh
-          </div>
-          <footer>
-            <div class="day-stamp">
-              10 days ago
-            </div>
-            <div class="interaction-container">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
-      </section>
+      <!-- where tweets get displayed, markup in client.js-->
+      <section id="tweet-container">   </section>
     </main>
   </body>
 </html>
