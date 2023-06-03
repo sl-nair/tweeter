@@ -35,3 +35,41 @@ main {
   margin: 0 5% 0 5%;
 }
  
+.name {
+    margin: 0px;
+  }
+  
+
+@media screen and (min-width: 1024px) {
+  .responsive-desktop{
+    display: flex;
+    flex-direction: row;
+    margin: 135px 30px 0 30px;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .navigation {
+    background-color:  #e1ab08;
+    background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+  }
+  .responsive-header {
+    padding-top: 1830px;
+    height: 435px;
+    z-index: 1000;
+  }
+  .name {
+    margin-top: 0px;
+    position: relative;
+    z-index: 1000;
+  }
+  .profile-image {
+    width: 220px;
+    position: relative;
+    z-index: 1000;
+  }
+  .responsive {
+  margin-top: -30px;
+  }
+}

@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    
-    <!-- Bungee Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet"> 
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!--Source Sans Pro-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-   
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- App JS -->
-    <script type="text/javascript" src="./scripts/client.js"></script>
-    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
-    
-  </head>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="title">tweeter</span>
-      <span class="additional-content">Write a new tweeter
-        <i class="fa-solid fa-angles-down"></i>
-      </span>
-    </nav>
-    <br>
-    <header>
-      <div>
-          <img src="/images/profile-hex.png"> 
+  <!-- Bungee Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+  <!--Source Sans Pro-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="./scripts/client.js"></script>
+  <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="navigation">
+    <span class="title">tweeter</span>
+    <span class="additional-content">Write a new tweeter
+      <i class="fa-solid fa-angles-down"></i>
+    </span>
+  </nav>
+  <br>
+
+  <div class="responsive-desktop" class="responsive-tablet">
+    <header class="header" class="responsive-header">
+      <div class="profile">
+        <img class="profile-image" src="/images/profile-hex.png" alt="profile-picture" />
       </div>
       <br>
       <div>
-          <h2>Sethu Nair</h2>
+        <h2 class="name">Sethu Nair</h2>
       </div>
     </header>
 
@@ -56,14 +65,14 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-         
+
         <form id="tweet-form" action="/tweets/" method="POST">
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
           <div id="button-and-counter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
-          <div class ="error" id="empty-error">
+          <div class="error" id="empty-error">
             <!-- <i class="fa-sharp fa-regular fa-square-exclamation" style="color: #ff0000;"></i> -->
             Say something!
           </div>
@@ -73,7 +82,10 @@
         </form>
       </section>
       <!-- where tweets get displayed, markup in client.js-->
-      <section id="tweet-container">   </section>
+      <section id="tweet-container"> </section>
     </main>
-  </body>
+
+  </div>
+</body>
+
 </html>

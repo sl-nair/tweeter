@@ -7,22 +7,27 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   position:fixed;
-  width: inherit;
+  width: 100%;
   }
 
 .title {
   font-family: 'Bungee', cursive; 
-  
+  display: flex;
+  align-items: center;
 }
-
+  
 .additional-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 22px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-header {
-  height: 620px;
+.header {
+  height: 400px;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -31,3 +36,6 @@ header {
   background-color: #e1ab08;
   background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
 } 
+
+
+

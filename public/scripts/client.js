@@ -10,12 +10,15 @@ $(document).ready(function() {
     $.get('/tweets').then((data) => {
         $("#tweet-container").html("");
         renderTweets(data);
-      });
+      })
+      .then(() => {
+        $("textarea").html("");
+      })
   };
-  //ask about this
+  
   loadTweets();
 
-  
+  //hides error messages when page is loaded 
   const formReset = function() {
     $('#too-long-error').hide();
     $('#empty-error').hide();
@@ -23,6 +26,7 @@ $(document).ready(function() {
 
   formReset()
   
+  //to prevent cross-site scripting attacks
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -39,10 +43,13 @@ $(document).ready(function() {
   const createTweetElement = function(tweetObj) {
     let $tweet = `
       <article class="tweet">
-        <h3>
-        <i class="fa-sharp fa-solid fa-user-ninja"></i>
-          ${tweetObj.user.name}         
-        </h3>
+        <header class="tweet-header">
+          <h3>
+            <i class="fa-sharp fa-solid fa-user-ninja"></i>
+              ${tweetObj.user.name}         
+          </h3>
+          <h3 class="handle"> ${tweetObj.user.handle} </h3>
+        </header>
         <section class="tweet-text"> 
           ${escape(tweetObj.content.text)}
         </section>
@@ -56,12 +63,14 @@ $(document).ready(function() {
         </footer>
       </article>
       `;
-    return $tweet
+    return $tweet;
   };
 
   $('#tweet-form').on("submit", function(event){
     event.preventDefault()
+
     formReset();
+    
     const data = $(this).serialize();
 
     if($("textarea").val() === "") {
@@ -73,6 +82,13 @@ $(document).ready(function() {
       .then(() => {
         loadTweets();
       })
+      .then(() => {
+        $("textarea").val("");
+      })
+      .then(() => {
+        $(".counter").text(140);
+      });
+
     }
 
   });
