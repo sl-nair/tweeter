@@ -46,6 +46,7 @@ button {
 #tweet-container>article:hover {
   box-shadow:7px 9px#4056a0 ;
   box-sizing: border-box;
+  background-color: rgb(227, 240, 251);
 }
 
 h3 {
